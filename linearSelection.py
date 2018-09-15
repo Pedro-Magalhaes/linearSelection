@@ -1,9 +1,7 @@
 #!/usr/bin/env python3.6
 
-import math
 
 def groupIn5(l):
-    count = 0
     group = []
     for i in range(len(l)):
         if (i % 5) == 0: #devemos criar um novo grupo
@@ -51,13 +49,8 @@ def linearSelection(l,k):
     return __linearSelectionRecusion(l,k)
 
 a = [7,4,1,2,3,5,6,89,20,22,14,12,25,11,32,33,44]
-# b = groupIn5(a)
-# print(b)
-# m = linearMedian(a)
-# l,r = getLR(a,m)
-# print(l,r)
-z = a[:]
-z.sort()
-print(z)
-e = linearSelection(a,4)
-print(e)
+k = 4
+e = linearSelection(a,k)
+a.sort()
+print("vetor:",a)
+print(e , k)
