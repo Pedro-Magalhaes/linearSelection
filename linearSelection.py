@@ -34,7 +34,7 @@ def getLR(l,mediana):
     return L,R
 
 
-def __linearSelectionRecusion(l,k):
+def __linearSelectionRecursion(l,k):
     # Função que vai separando em grupos de 5 até achar a mediana
     m = linearMedian(l)
     # Função que separa L e R
@@ -42,23 +42,24 @@ def __linearSelectionRecusion(l,k):
     if k == len(L) + 1: # elemento eh a mediana
         return m
     if k < len(L) + 1: # elemento esta a esquerda
-        return __linearSelectionRecusion(L,k)
+        return __linearSelectionRecursion(L,k)
     else: # esta na lista de maiores que a mediana
         #como a lista L e a mediana foram descartadas temos que compensar no k
-        return __linearSelectionRecusion(R , k - len(L) - 1)
+        return __linearSelectionRecursion(R , k - len(L) - 1)
 
 def linearSelection(l,k):
     assert(k > 0)
     assert( type(l) == list)
-    return __linearSelectionRecusion(l,k)
+    return __linearSelectionRecursion(l,k)
 
 def Testes ():
-    # Teste para 10 instâncias diferentes
+    # Teste para instâncias com 10 tamanhos diferentes
     for i in range (0,10):
         # Calculando k, sendo metade da lista arredondado para baixo
         k = (i + 1) * 1000 // 2
         somaLinear = 0
         somaSort = 0
+        #criando 10 instâncias de cada tamanho
         for u in range(0,10):
             vet = []
             # Cada instância vai ter quantidade de elementos diferentes (1000,2000.....10000)
