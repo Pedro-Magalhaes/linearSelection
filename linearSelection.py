@@ -81,11 +81,9 @@ def Testes ():
             fim = time.time()
             somaSort += fim - inicio
 
-        print("Tempo médio total do algoritmo Linear Selection para ",(i+1)*1000, " elementos: ")
-        print("{:.2e}".format(somaLinear/10))
-        #print(somaLinear/10)
-        print("Tempo médio total do algoritmo Sort Selection para ",(i+1)*1000, " elementos: ")
-        print("{:.2e}".format(somaSort/10))
+        print("Para ",(i+1)*1000, " elementos: ")
+        print("LINEAR SELECTION -> " +"Tempo: {:.2e}".format(somaLinear/10) + " Mediana: "+str(m))
+        print(" SORT  SELECTION -> " +"Tempo: {:.2e}".format(somaSort/10) + " Mediana: "+str(m))
 
 
 Testes()
