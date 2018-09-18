@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.6
-
+from heap import Heap
 from random import randrange, uniform
 import time
 
@@ -52,6 +52,7 @@ def linearSelection(l,k):
     assert( type(l) == list)
     return __linearSelectionRecursion(l,k)
 
+
 def Testes ():
     # Teste para instâncias com 10 tamanhos diferentes
     for i in range (0,10):
@@ -75,22 +76,17 @@ def Testes ():
 
             # Calculando tempo de execução do SortSelection
             inicio = time.time()
-            vet.sort()
+            Heap.heap_sort(vet)
             m2  = vet[k-1]
             fim = time.time()
             somaSort += fim - inicio
 
         print("Tempo médio total do algoritmo Linear Selection para ",(i+1)*1000, " elementos: ")
         print("{:.2e}".format(somaLinear/10))
+        #print(somaLinear/10)
         print("Tempo médio total do algoritmo Sort Selection para ",(i+1)*1000, " elementos: ")
         print("{:.2e}".format(somaSort/10))
 
 
-#a = [7,4,1,2,3,5,6,89,20,22,14,12,25,11,32,33,44]
-#k = 4
-#e = linearSelection(a,k)
-#a.sort()
-#print("vetor:",a)
-#print(e , k)
 Testes()
-#Teste
+
