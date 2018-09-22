@@ -60,10 +60,13 @@ def __linearSelectionRecusion(l,k):
 def linearSelection(l,k):
     assert(k > 0)
     assert( type(l) == list)
+    if len(l) < k:
+        print("Vetor termina antes de k. Len(l)=",len(l),"k = ",k)
+        return []
     return __linearSelectionRecusion(l,k)
 
-a = [7,4,1,2,3,5,6,89,20,22,22,22,22,22,22,22,14,12,25,11,32,33,44]
-k = 13
+a = [2,22,22,22,22,22,22]
+k = 22
 e = linearSelection(a,k)
 a.sort()
 print("vetor:",a)
