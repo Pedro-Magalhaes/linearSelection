@@ -3,6 +3,7 @@ import random
 from heap import Heap
 from random import randrange, uniform
 import time
+import argparse
 
 def groupIn5(l):
     group = []
@@ -97,9 +98,28 @@ def Testes ():
 
 #Testes()
 
-print("Teste com repetidos:")
-a = [1,2,3,4]
-e = linearSelection(a,4)
-a.sort()
-print(a)
-print(a[3],e)
+
+def main():
+    parser = argparse.ArgumentParser()
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--list', nargs='+',type=int,help="Lista de elementos em que devemos rodar o linear selection")
+    parser.add_argument('--k', type=int, default=0,help="o Késimo menor elemento sera retornado, se não for informado será retornada a mediana ( len(l)//2 )")
+    group.add_argument('-t', '--test',action='store_true',help="Rodar a bateria de testes propostos")
+    args = parser.parse_args()
+    if (args.test == True):
+        Testes()
+    else:
+        l = args.list
+        k = args.k or len(l)//2
+        element = linearSelection(l,k)
+        print("the {}th element is {}".format(k,element))
+        return  element
+
+
+main()
+# print("Teste com repetidos:")
+# a = [1,2,3,4]
+# e = linearSelection(a,4)
+# a.sort()
+# print(a)
+# print(a[3],e)
