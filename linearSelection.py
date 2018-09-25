@@ -30,17 +30,21 @@ def linearMedian(l):
 def getLR(l,mediana):
     L=[]
     R=[]
+    removed = False # vou remover 1 elemento igual a mediana
     for elemento in l:
         if elemento < mediana:
             L.append(elemento)
         elif elemento > mediana:
             R.append(elemento)
         else:
-            i = random.randint(1,2)
-            if(i == 1):
-                L.append(elemento)
+            if removed == True:
+                i = random.randint(1,2)
+                if(i == 1):
+                    L.append(elemento)
+                else:
+                    R.append(elemento)
             else:
-                R.append(elemento)
+                removed = True
     return L,R
 
 
