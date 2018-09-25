@@ -30,7 +30,11 @@ def linearMedian(l):
 def getLR(l,mediana):
     L=[]
     R=[]
-    removed = False # vou remover 1 elemento igual a mediana
+    # Para tratar o problema de elementos repetidos:
+    # se encontrar elementos repetidos, remove o primeiro deles
+    # em seguida passa a inserir os elementos repetidos cada hora em uma das listas
+    removed = False 
+    left = True
     for elemento in l:
         if elemento < mediana:
             L.append(elemento)
@@ -38,9 +42,9 @@ def getLR(l,mediana):
             R.append(elemento)
         else:
             if removed == True:
-                i = random.randint(1,2)
-                if(i == 1):
+                if(left == True):
                     L.append(elemento)
+                    left = False
                 else:
                     R.append(elemento)
             else:
