@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+﻿#!/usr/bin/env python3.6
 import random
 from heap import Heap
 from random import randrange, uniform
@@ -101,7 +101,7 @@ def Testes ():
 
         print("Para ",(i+1)*1000, " elementos: ")
         print("LINEAR SELECTION -> " +"Tempo: {:.2e}".format(somaLinear/10) + " Mediana: "+str(m))
-        print(" SORT  SELECTION -> " +"Tempo: {:.2e}".format(somaSort/10) + " Mediana: "+str(m))
+        print(" SORT  SELECTION -> " +"Tempo: {:.2e}".format(somaSort/10) + " Mediana: "+str(m2))
 
 
 #Testes()
