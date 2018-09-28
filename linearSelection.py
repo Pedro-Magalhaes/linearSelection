@@ -66,7 +66,12 @@ def __linearSelectionRecursion(l,k):
         return __linearSelectionRecursion(R , k - len(L) - 1)
 
 def linearSelection(l,k):
-    assert(k > 0)
+    if (k <= 0):
+        print('Error: k must be > 0')
+        exit(-1)
+    if (k > len(l)):
+        print('Error: k must be < than len(list)')
+        exit(-1)
     assert( type(l) == list)
     return __linearSelectionRecursion(l,k)
 
@@ -124,10 +129,7 @@ def main():
         return  element
 
 
+
+
 main()
-# print("Teste com repetidos:")
-# a = [1,2,3,4]
-# e = linearSelection(a,4)
-# a.sort()
-# print(a)
-# print(a[3],e)
+
