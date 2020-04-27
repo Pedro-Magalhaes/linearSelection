@@ -99,7 +99,7 @@ def Testes ():
 
             # Calculando tempo de execução do SortSelection
             inicio = time.time()
-            Heap.heap_sort(vet)
+            vet = Heap.heap_sort(vet)
             m2  = vet[k-1]
             fim = time.time()
             somaSort += fim - inicio
